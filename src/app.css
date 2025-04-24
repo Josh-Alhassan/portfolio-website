@@ -40,7 +40,7 @@ ul {
 }
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--menu-color);
 }
 a:hover {
   text-decoration: underline;
@@ -51,4 +51,30 @@ a:visited {
 a:focus {
   outline: 2px solid var(--color);
   outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 50px 70px;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    padding: 50px 200px;
+  }
+}
+@media (min-width: 1600px) {
+  body {
+    padding: 50px 300px;
+  }
+}
+@media (min-width: 2000px) {
+  body {
+    padding: 50px 400px;
+  }
+}
+@media (min-width: 2400px) {
+  body {
+    padding: 50px 500px;
+  }
 }

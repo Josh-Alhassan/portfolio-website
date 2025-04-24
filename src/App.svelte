@@ -1,14 +1,12 @@
 <script>
   import Navigation from "./components/Navigation.svelte";
-
- 
+  import Profile from "./components/Profile.svelte";
 </script>
 
 <main>
   <Navigation />
-  <h1>Hello Joshua</h1>
+  <Profile />
 </main>
 
 <style>
-  
 </style>
