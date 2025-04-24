@@ -1,0 +1,220 @@
+<script>
+  import "boxicons";
+  import "../app.css";
+
+  let menuOpen = false;
+  let darkMode = false;
+
+  // Check for saved preference or system preference
+  if (typeof window !== "undefined") {
+    darkMode =
+      localStorage.getItem("darkMode") === "true" ||
+      (!localStorage.getItem("darkMode") &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+    document.documentElement.classList.toggle("dark", darkMode);
+  }
+
+  const toggleMenu = () => {
+    menuOpen = !menuOpen;
+  };
+
+  const toggleDarkMode = () => {
+    darkMode = !darkMode;
+    document.documentElement.classList.toggle("dark", darkMode);
+    localStorage.setItem("darkMode", String(darkMode));
+  };
+
+  // Navigation items
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Blog", path: "/blog" },
+    { name: "Projects", path: "/projects" },
+  ];
+</script>
+
+<nav class="navigation">
+  <a href="/"><h2 class="name-title">Joshua Alhassan</h2></a>
+
+  <!-- Desktop Navigation -->
+  <div class="desktop-nav">
+    <ul>
+      {#each navItems as item}
+        <li>
+          <a href={item.path} class="menu-desktop-link">{item.name}</a>
+        </li>
+      {/each}
+    </ul>
+  </div>
+
+  <div class="nav-icons">
+    <box-icon name="search" color="#ffffff"></box-icon>
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <box-icon
+      name={darkMode ? "sun" : "moon"}
+      color="var(--icon-color)"
+      on:click={toggleDarkMode}
+    ></box-icon>
+
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <box-icon
+      name={menuOpen ? "x" : "menu-alt-right"}
+      color="#ffffff"
+      on:click={toggleMenu}
+      class="menu-alt-right"
+    ></box-icon>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu {menuOpen ? 'open' : ''}">
+    <ul>
+      {#each navItems as item}
+        <li>
+          <a href={item.path} on:click={() => (menuOpen = false)}>{item.name}</a
+          >
+        </li>
+      {/each}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 64px;
+  }
+
+  .name-title {
+    font-size: 1.4rem;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .nav-icons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .nav-icons box-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  /* ##################### */
+  /* DESKTOP VIEW STYLING */
+  /* ##################### */
+
+  .desktop-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .desktop-nav a {
+    color: var(--menu-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0.5rem 0;
+  }
+
+  .desktop-nav a:hover {
+    color: #ccc;
+  }
+
+  .desktop-nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+  }
+
+  .desktop-nav a:hover::after {
+    width: 100%;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    left: 10px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    background: var(--mobile-menu-background);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+
+  .mobile-menu.open {
+    width: 95%;
+    height: auto;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-menu li {
+    padding: 0.5rem 0;
+  }
+
+  .mobile-menu a {
+    color: var(--menu-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  .mobile-menu a:hover {
+    color: #ccc;
+  }
+
+  /* ##################### */
+  /* TABLET VIEW STYLING */
+  /* ##################### */
+
+  @media (min-width: 768px) {
+    .mobile-menu {
+      display: none;
+    }
+
+    .mobile-menu-icon {
+      display: none;
+    }
+
+    .desktop-nav {
+      display: block;
+    }
+
+    .menu-alt-right {
+      display: none;
+    }
+  }
+
+  /* @media (max-width: 767px) {
+    .desktop-nav {
+      display: none;
+    }
+  } */
+</style>
