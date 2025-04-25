@@ -1,6 +1,8 @@
 <script>
   import "boxicons";
   import "../app.css";
+  let currentPath = window.location.pathname;
+  // import Router, { link } from "svelte-spa-router";
 
   let menuOpen = false;
   let darkMode = false;
@@ -41,7 +43,11 @@
     <ul>
       {#each navItems as item}
         <li>
-          <a href={item.path} class="menu-desktop-link">{item.name}</a>
+          <a
+            href={item.path}
+            class:active={currentPath === item.path}
+            class="menu-desktop-link">{item.name}</a
+          >
         </li>
       {/each}
     </ul>

@@ -164,6 +164,8 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
+
+    margin-bottom: 100px;
   }
   .project-card {
     background-color: var(--menu-color);

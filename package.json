@@ -10,10 +10,13 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@types/node": "^22.15.2",
     "svelte": "^5.23.1",
     "vite": "^6.3.1"
   },
   "dependencies": {
-    "boxicons": "^2.1.4"
+    "@sveltejs/kit": "^2.20.7",
+    "boxicons": "^2.1.4",
+    "svelte-spa-router": "^4.0.1"
   }
 }
