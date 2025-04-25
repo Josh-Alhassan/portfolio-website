@@ -7,6 +7,7 @@
 
   import { onMount } from "svelte";
   import About from "./routes/about/About.svelte";
+  import Blog from "./routes/blog/Blog.svelte";
 
   let currentRoute = "home";
 
@@ -14,6 +15,8 @@
     const path = window.location.pathname;
     if (path === "/about") {
       currentRoute = "about";
+    } else if (path === "/blog") {
+      currentRoute = "blog";
     }
   });
 </script>
@@ -27,6 +30,8 @@
     <Projects />
   {:else if currentRoute === "about"}
     <About />
+  {:else if currentRoute === "blog"}
+    <Blog />
   {/if}
 
   <Footer />

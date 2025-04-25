@@ -29,6 +29,7 @@
 :root.dark {
   --color-scheme: light dark;
   --color: rgba(255, 255, 255, 0.87);
+  --text-color: #ffffff;
 
   --background-color: #242424;
 }
@@ -58,6 +59,10 @@ a:visited {
 a:focus {
   outline: 2px solid var(--color);
   outline-offset: 2px;
+}
+
+.secondary-heading {
+  font-size: 2.4rem;
 }
 
 @media (min-width: 768px) {

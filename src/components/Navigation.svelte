@@ -54,7 +54,7 @@
   </div>
 
   <div class="nav-icons">
-    <box-icon name="search" color="#ffffff"></box-icon>
+    <box-icon name="search" color="#a0ad94"></box-icon>
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <box-icon
@@ -67,7 +67,7 @@
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <box-icon
       name={menuOpen ? "x" : "menu-alt-right"}
-      color="#ffffff"
+      color="#a0ad94"
       on:click={toggleMenu}
       class="menu-alt-right"
     ></box-icon>
@@ -96,8 +96,9 @@
 
   .name-title {
     font-size: 1.4rem;
-    color: #ffffff;
+    color: var(--color);
     text-decoration: none;
+    font-weight: 600;
   }
 
   .nav-icons {
