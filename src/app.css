@@ -17,6 +17,13 @@
   --menu-color: #a0ad94;
   --base-font-size: 62.5%;
   --mobile-menu-background: #1d1f20d9;
+  --svelte-color: #f96743;
+  --react-color: #58c4dc;
+  --vue-color: #4fc08d;
+  --angular-color: #dd0031;
+  --ember-color: #e04e39;
+  --material-ui-color: #1976d2;
+  --next-color: #000000;
 }
 
 :root.dark {

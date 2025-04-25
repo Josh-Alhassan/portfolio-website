@@ -3,6 +3,7 @@
   import project2 from "../assets/project-2.png";
   import project3 from "../assets/project-3.png";
   import project4 from "../assets/project-4.png";
+  import project5 from "../assets/project-5.png";
 </script>
 
 <section>
@@ -11,14 +12,18 @@
     <div class="project-card">
       <h3>Personal Portfolio</h3>
       <p>My personal portfolio showcasing my work and skills.</p>
-      <p>Technologies: <span class="span-style alt-1"> Svelte </span></p>
-      <a href="#">View Project</a>
-      <a
-        href="https://github.com/Josh-Alhassan/portfolio-website"
-        target="_blank">View Code</a
-      >
+      <p>Technologies: <span class="span-style svelte"> Svelte </span></p>
+
+      <div class="project-links">
+        <a href="#">Preview</a>
+        <a
+          href="https://github.com/Josh-Alhassan/portfolio-website"
+          target="_blank"
+          ><box-icon name="github" type="logo" color="#ffffff"></box-icon> Code</a
+        >
+      </div>
       <figure class="project-image-container">
-        <img src={project1} alt="Portfolio Project 1" class="project-image" />
+        <img src={project1} alt="Portfolio website" class="project-image" />
         <figcaption>
           A screenshot of my personal portfolio website, built with Svelte.
           <br />
@@ -35,14 +40,18 @@
         find and apply for jobs.
       </p>
       <p>
-        Technologies: <span class="span-style alt-2"> React.js</span>
+        Technologies: <span class="span-style react"> React.js</span>
       </p>
-      <a href="https://www.edustipend.org">View Project</a>
-      <a href="https://github.com/edustipend/dotorg" target="_blank"
-        >View Code</a
-      >
+
+      <div class="project-links">
+        <a href="https://www.edustipend.org">Project</a>
+        <a href="https://github.com/edustipend/dotorg" target="_blank"
+          ><box-icon name="github" type="logo" color="#ffffff"
+          ></box-icon>Code</a
+        >
+      </div>
       <figure class="project-image-container">
-        <img src={project2} alt="Edustipend 2" class="project-image" />
+        <img src={project2} alt="Edustipend Platform" class="project-image" />
         <figcaption>
           A screenshot of my Edustipend website, built with React.js
           <br />
@@ -58,15 +67,22 @@
         learning. It offers laptops, data subscriptions, and other resources.
       </p>
       <p>
-        Technologies: <span class="span-style alt-3"> React.js</span>
-        <span class="span-style alt-2"> Next.js</span>
-        <span class="span-style alt-1"> Material UI</span>
+        Technologies: <span class="span-style react"> React.js</span>
+        <span class="span-style next"> Next.js</span>
+        <span class="span-style material-ui"> Material UI</span>
       </p>
-      <a href="#">View Project</a>
-      <a href="https://github.com/00Photon/web.tbo" target="_blank">View Code</a
-      >
+      <div class="project-links">
+        <a href="https://web-tbo.vercel.app/" target="_blank">Preview</a>
+        <a href="https://github.com/00Photon/web.tbo" target="_blank"
+          ><box-icon name="github" type="logo" color="#ffffff"></box-icon> Code</a
+        >
+      </div>
       <figure class="project-image-container">
-        <img src={project3} alt="TBO Project 3" class="project-image" />
+        <img
+          src={project3}
+          alt="TBO Job Application Platform"
+          class="project-image"
+        />
         <figcaption>
           A screenshot of my TBO website, built with React, Next and Material
           UI.
@@ -82,17 +98,53 @@
         of Faith.
       </p>
       <p>
-        Technologies: <span class="span-style alt-3"> React.js</span>
-        <span class="span-style alt-4"> Next.js</span>
+        Technologies: <span class="span-style react"> React.js</span>
+        <span class="span-style next"> Next.js</span>
       </p>
-      <a href="https://www.ftf-ministry.vercel.app">View Project</a>
-      <a href="https://github.com/Josh-Alhassan/ftf-ministry" target="_blank"
-        >View Code</a
-      >
+      <div class="project-links">
+        <a href="https://www.ftf-ministry.vercel.app">Preview</a>
+        <a href="https://github.com/Josh-Alhassan/ftf-ministry" target="_blank"
+          ><box-icon name="github" type="logo" color="#ffffff"></box-icon> Code</a
+        >
+      </div>
       <figure class="project-image-container">
-        <img src={project4} alt="TBO Project 3" class="project-image" />
+        <img
+          src={project4}
+          alt="Faith of the Faithful Ministries website"
+          class="project-image"
+        />
         <figcaption>
           A screenshot of FTF ministry website, built with React, and Next.js.
+          <br />
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="project-card">
+      <h3>Everey Research App</h3>
+      <p>
+        A research app that allows users (academians) to publish research and
+        articles, conduct surveys and collect data efficiently.
+      </p>
+      <p>
+        Technologies: <span class="span-style react"> React.js</span>
+        <span class="span-style next"> Next.js</span>
+      </p>
+
+      <div class="project-links">
+        <a href="https://www.ftf-ministry.vercel.app">Preview</a>
+        <a href="https://github.com/Josh-Alhassan/everey-app" target="_blank">
+          <box-icon name="github" type="logo" color="#ffffff"></box-icon> Code</a
+        >
+      </div>
+      <figure class="project-image-container">
+        <img
+          src={project5}
+          alt="Everey Research Platform"
+          class="project-image"
+        />
+        <figcaption>
+          A screenshot of use-everey app, built with React, and Next.js.
           <br />
         </figcaption>
       </figure>
@@ -131,6 +183,13 @@
     font-size: 1.2rem;
     margin-bottom: 1rem;
   }
+
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
   .project-card a {
     display: inline-block;
     margin-top: 1rem;
@@ -139,6 +198,10 @@
     color: var(--menu-color);
     text-decoration: none;
     border-radius: 0.4rem;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
   }
   .project-card a:hover {
     background-color: #ccc;
@@ -168,20 +231,20 @@
     border-radius: 5px;
   }
 
-  .alt-1 {
-    background-color: #a94064;
+  .svelte {
+    background-color: var(--svelte-color);
   }
 
-  .alt-2 {
-    background-color: #636172;
+  .react {
+    background-color: var(--react-color);
   }
 
-  .alt-3 {
-    background-color: #83b3d7;
+  .material-ui {
+    background-color: var(--material-ui-color);
   }
 
-  .alt-4 {
-    background-color: #ff9f00;
+  .next {
+    background-color: var(--next-color);
   }
 
   @media (min-width: 768px) {
@@ -210,7 +273,7 @@
   @media (min-width: 1024px) {
     .projects-container {
       gap: 1.5rem;
-      justify-content: space-between;
+      justify-content: flex-start;
       row-gap: 3rem;
     }
   }

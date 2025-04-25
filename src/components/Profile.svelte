@@ -37,10 +37,7 @@
         aria-label="Twitter Profile"
         ><box-icon name="twitter" type="logo" color="#ffffff"></box-icon></a
       >
-      <a
-        href="https://github.com"
-        class="profile-link"
-        aria-label="GitHub Profile"
+      <a href="https://github.com" class="profile-link" aria-label="Email"
         ><box-icon name="envelope" color="#ffffff"></box-icon></a
       >
       <a href="/resume.pdf" class="profile-link" aria-label="Download Resume"
