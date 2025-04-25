@@ -76,10 +76,10 @@
 
   {#each experiences as experience}
     <article class="work-article">
-      <h4 class="work-role">{experience.role}</h4>
       <a href={experience.url} target="_blank" class="work-company"
         >{experience.company}</a
       >
+      <h4 class="work-role">{experience.role}</h4>
       <span class="work-location">{experience.location}</span>
       <p class="work-duration">{experience.duration}</p>
       <ul class="work-responsibilities">
@@ -124,6 +124,8 @@
     padding-bottom: 0.1rem;
     margin-bottom: 0.4rem;
     color: #0a0a09;
+    font-size: 1.6rem;
+    font-weight: 600;
 
     display: inline-block;
   }
@@ -159,9 +161,9 @@
       font-size: 1.4rem;
     }
 
-    .work-company {
+    /* .work-company {
       font-size: 1.2rem;
-    }
+    } */
 
     .work-location {
       font-size: 1rem;
