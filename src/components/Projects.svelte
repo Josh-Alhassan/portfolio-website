@@ -2,6 +2,7 @@
   import project1 from "../assets/project-1.png";
   import project2 from "../assets/project-2.png";
   import project3 from "../assets/project-3.png";
+  import project4 from "../assets/project-4.png";
 </script>
 
 <section>
@@ -73,6 +74,29 @@
         </figcaption>
       </figure>
     </div>
+
+    <div class="project-card">
+      <h3>Faith of The Faithful Ministries</h3>
+      <p>
+        An Interdenominational ministries website, called to teach the lifestyle
+        of Faith.
+      </p>
+      <p>
+        Technologies: <span class="span-style alt-3"> React.js</span>
+        <span class="span-style alt-4"> Next.js</span>
+      </p>
+      <a href="https://www.ftf-ministry.vercel.app">View Project</a>
+      <a href="https://github.com/Josh-Alhassan/ftf-ministry" target="_blank"
+        >View Code</a
+      >
+      <figure class="project-image-container">
+        <img src={project4} alt="TBO Project 3" class="project-image" />
+        <figcaption>
+          A screenshot of FTF ministry website, built with React, and Next.js.
+          <br />
+        </figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -80,6 +104,7 @@
   .secondary-heading {
     font-size: 2rem;
     margin-bottom: 1.4rem;
+    font-weight: 700;
   }
 
   .projects-container {
@@ -104,7 +129,7 @@
   }
   .project-card p {
     font-size: 1.2rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 1rem;
   }
   .project-card a {
     display: inline-block;
@@ -136,6 +161,7 @@
   .span-style {
     font-weight: 600;
     display: inline-block;
+    margin-bottom: 0.5rem;
 
     padding: 5px;
     color: #fff;
@@ -154,14 +180,19 @@
     background-color: #83b3d7;
   }
 
+  .alt-4 {
+    background-color: #ff9f00;
+  }
+
   @media (min-width: 768px) {
     .projects-container {
       gap: 2rem;
     }
 
     .project-card {
-      max-width: 500px;
-      padding: 2rem;
+      max-width: 450px;
+      height: auto;
+      padding: 1.5rem;
     }
     .project-card h3 {
       font-size: 1.6rem;
@@ -178,8 +209,9 @@
   }
   @media (min-width: 1024px) {
     .projects-container {
-      gap: 4rem;
-      justify-content: start;
+      gap: 1.5rem;
+      justify-content: space-between;
+      row-gap: 3rem;
     }
   }
 </style>

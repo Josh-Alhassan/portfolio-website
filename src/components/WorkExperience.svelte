@@ -110,6 +110,7 @@
   .work-heading {
     font-size: 1.8rem;
     margin-bottom: 1.2rem;
+    font-weight: 700;
   }
 
   .work-role,
