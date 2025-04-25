@@ -12,7 +12,7 @@
   --base-font-family: "Space Mono", monospace;
   --font-weight-normal: 400;
   --line-height: 1.5;
-  --bg-color: #ffffff;
+  --bg-color: rgba(255, 255, 255, 0.87);
   --text-color: #333333;
   --menu-color: #a0ad94;
   --base-font-size: 62.5%;
