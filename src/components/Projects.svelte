@@ -132,7 +132,7 @@
       </p>
 
       <div class="project-links">
-        <a href="https://www.ftf-ministry.vercel.app">Preview</a>
+        <a href="https://use-everey-research-zbii.vercel.app/">Preview</a>
         <a href="https://github.com/Josh-Alhassan/everey-app" target="_blank">
           <box-icon name="github" type="logo" color="#ffffff"></box-icon> Code</a
         >
