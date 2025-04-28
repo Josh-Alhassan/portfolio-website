@@ -1,11 +1,20 @@
 <script>
   import "boxicons";
   import "../app.css";
-  let currentPath = window.location.pathname;
-  // import Router, { link } from "svelte-spa-router";
+  import { navigate, subscribe } from "../lib/router";
+  import { onDestroy } from "svelte";
 
+  let currentPath = window.location.pathname;
   let menuOpen = false;
   let darkMode = false;
+
+  // Subscribe to route changes
+  const unsubscribe = subscribe((path) => {
+    currentPath = path;
+  });
+
+  // Cleanup subscription
+  onDestroy(unsubscribe);
 
   // Check for saved preference or system preference
   if (typeof window !== "undefined") {
@@ -26,6 +35,11 @@
     localStorage.setItem("darkMode", String(darkMode));
   };
 
+  function handleNavigation(path) {
+    navigate(path);
+    menuOpen = false;
+  }
+
   // Navigation items
   const navItems = [
     { name: "Home", path: "/" },
@@ -36,7 +50,9 @@
 </script>
 
 <nav class="navigation">
-  <a href="/"><h2 class="name-title">Joshua Alhassan</h2></a>
+  <a href="/" on:click|preventDefault={() => handleNavigation("/")}>
+    <h2 class="name-title">Joshua Alhassan</h2>
+  </a>
 
   <!-- Desktop Navigation -->
   <div class="desktop-nav">
@@ -45,9 +61,12 @@
         <li>
           <a
             href={item.path}
+            on:click|preventDefault={() => handleNavigation(item.path)}
             class:active={currentPath === item.path}
-            class="menu-desktop-link">{item.name}</a
+            class="menu-desktop-link"
           >
+            {item.name}
+          </a>
         </li>
       {/each}
     </ul>
@@ -75,11 +94,17 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu {menuOpen ? 'open' : ''}">
-    <ul>
+    <ul role="menu">
       {#each navItems as item}
-        <li>
-          <a href={item.path} on:click={() => (menuOpen = false)}>{item.name}</a
+        <li role="none">
+          <a
+            href={item.path}
+            role="menuitem"
+            on:click|preventDefault={() => handleNavigation(item.path)}
+            class:active={currentPath === item.path}
           >
+            {item.name}
+          </a>
         </li>
       {/each}
     </ul>

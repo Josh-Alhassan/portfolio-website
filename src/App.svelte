@@ -1,4 +1,6 @@
 <script>
+  // @ts-nocheck
+
   import Footer from "./components/Footer.svelte";
   import Navigation from "./components/Navigation.svelte";
   import Profile from "./components/Profile.svelte";
@@ -8,21 +10,37 @@
   import { onMount } from "svelte";
   import About from "./routes/about/About.svelte";
   import Blog from "./routes/blog/Blog.svelte";
+  import Router from "./components/Router.svelte";
 
   let currentRoute = "home";
+  const routes = {
+    "/": "home",
+    "/about": "about",
+    "/blog": "blog",
+  };
+
+  function updateRoute() {
+    currentRoute = routes[window.location.pathname] || "home";
+  }
 
   onMount(() => {
-    const path = window.location.pathname;
-    if (path === "/about") {
-      currentRoute = "about";
-    } else if (path === "/blog") {
-      currentRoute = "blog";
-    }
+    updateRoute();
+    window.addEventListener("popstate", updateRoute);
+
+    return () => {
+      window.removeEventListener("popstate", updateRoute);
+    };
   });
+
+  function navigate(path) {
+    window.history.pushState({}, "", path);
+    updateRoute();
+  }
 </script>
 
 <main>
-  <Navigation />
+  <Navigation {navigate} />
+  <Router />
 
   {#if currentRoute === "home"}
     <Profile />
@@ -32,6 +50,8 @@
     <About />
   {:else if currentRoute === "blog"}
     <Blog />
+  {:else}
+    <h1>Page Not Found</h1>
   {/if}
 
   <Footer />
