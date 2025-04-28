@@ -1,10 +1,9 @@
-// src/lib/router.js
+// ./lib/router.js
 export const routes = {
   "/": "Home",
   "/about": "About",
   "/blog": "Blog",
   "/projects": "Projects",
-  // Add more routes as needed
 };
 
 let currentRoute = window.location.pathname;

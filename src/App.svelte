@@ -1,61 +1,34 @@
 <script>
   // @ts-nocheck
-
+  import { onMount } from "svelte";
   import Footer from "./components/Footer.svelte";
   import Navigation from "./components/Navigation.svelte";
-  import Profile from "./components/Profile.svelte";
-  import Projects from "./components/Projects.svelte";
-  import WorkExperience from "./components/WorkExperience.svelte";
-
-  import { onMount } from "svelte";
-  import About from "./routes/about/About.svelte";
-  import Blog from "./routes/blog/Blog.svelte";
   import Router from "./components/Router.svelte";
+  import { navigate } from "./lib/router"; // Import from your router.js
 
-  let currentRoute = "home";
-  const routes = {
-    "/": "home",
-    "/about": "about",
-    "/blog": "blog",
-  };
-
-  function updateRoute() {
-    currentRoute = routes[window.location.pathname] || "home";
-  }
-
+  // Initialize dark mode (if needed)
+  let darkMode = false;
   onMount(() => {
-    updateRoute();
-    window.addEventListener("popstate", updateRoute);
-
-    return () => {
-      window.removeEventListener("popstate", updateRoute);
-    };
+    if (typeof window !== "undefined") {
+      darkMode =
+        localStorage.getItem("darkMode") === "true" ||
+        (!localStorage.getItem("darkMode") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches);
+      document.documentElement.classList.toggle("dark", darkMode);
+    }
   });
-
-  function navigate(path) {
-    window.history.pushState({}, "", path);
-    updateRoute();
-  }
 </script>
 
-<main>
+<main class:dark={darkMode}>
   <Navigation {navigate} />
   <Router />
-
-  {#if currentRoute === "home"}
-    <Profile />
-    <WorkExperience />
-    <Projects />
-  {:else if currentRoute === "about"}
-    <About />
-  {:else if currentRoute === "blog"}
-    <Blog />
-  {:else}
-    <h1>Page Not Found</h1>
-  {/if}
-
+  <!-- All routing logic is handled inside this component -->
   <Footer />
 </main>
 
 <style>
+  /* Optional: Add dark mode transitions */
+  :global(html) {
+    transition: background-color 0.3s ease;
+  }
 </style>
