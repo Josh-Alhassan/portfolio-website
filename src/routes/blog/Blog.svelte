@@ -5,21 +5,58 @@
   const blogPosts = [
     {
       id: 1,
-      title: "State Update Batching in React Made Easy",
+      title: "Understanding the useEffect Hook in React: A Comprehensive Guide",
       excerpt:
-        "Developer Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ad hic ipsum, reprehenderit quos beatae quibusdam? Blanditiis, voluptas eaque. Ullam odit excepturi laboriosam vel nihil qui possimus quasi odio voluptates.",
-      date: "2025-04-14",
-      slug: "react-state-update-batching",
-      readTime: "5 min read",
+        "React's useEffect hook elegantly handles side effects—operations like data fetching, subscriptions, or DOM manipulations that interact with external systems. Unlike event handlers triggered by user actions, effects run automatically during component lifecycle phases:",
+      date: "2024-12-11",
+      slug: "https://alhassanjoshua.hashnode.dev/understanding-the-useeffect-hook-in-react-a-comprehensive-guide",
+      readTime: "4 min read",
     },
     {
       id: 2,
-      title: "Developers Health - Quick Recovery Process",
+      title: "React State Update Batching: Optimizing Performance",
       excerpt:
-        "Developer Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ad hic ipsum, reprehenderit quos beatae quibusdam? Blanditiis, voluptas eaque. Ullam odit excepturi laboriosam vel nihil qui possimus quasi odio voluptates.",
-      date: "2025-04-14",
-      slug: "developers-health-recovery",
+        "React’s state update batching intelligently groups multiple state changes into a single re-render, boosting performance by minimizing unnecessary UI updates. This optimization is particularly beneficial in scenarios where multiple state updates occur in quick succession, such as within event handlers or asynchronous operations.",
+      date: "2024-12-11",
+      slug: "https://alhassanjoshua.hashnode.dev/state-update-batching-in-react-made-simple",
       readTime: "4 min read",
+    },
+    {
+      id: 3,
+      title: "Components vs Instances vs Elements",
+      excerpt:
+        "Understanding React components, instances, and React elements concepts is key to knowing how React works, and in this article, we’ll learn the difference between these three concepts. By learning these concepts, you can build better React applications and explain the framework more clearly. Plus, they are often discussed in interviews.",
+      date: "2024-11-13",
+      slug: "https://alhassanjoshua.hashnode.dev/components-vs-instances-vs-elements",
+      readTime: "3 min read",
+    },
+    {
+      id: 4,
+      title:
+        "My Note on Understanding PropTypes in React: A Guide to Component Typing",
+      excerpt:
+        "In React, PropTypes provides a way to type-check the props passed to components, ensuring that the props have the correct types. This helps to catch bugs, especially in larger applications or collaborative projects, by ensuring each prop's value and type are as expected.",
+      date: "2024-11-2",
+      slug: "https://alhassanjoshua.hashnode.dev/my-note-on-understanding-proptypes-in-react-a-guide-to-component-typing",
+      readTime: "4 min read",
+    },
+    {
+      id: 4,
+      title: "Optimizing Performance Through Sleep and Brain Health  ",
+      excerpt:
+        "This article explores strategies to improve personal performance and prevent burnout, focusing on the importance of brain health, sleep, and task prioritization. The conversation revolves around building practical methods to ensure long-term well-being while maintaining productivity in fast-paced work environments. Below is a detailed report on the main topics discussed.",
+      date: "2024-10-19",
+      slug: "https://alhassanjoshua.hashnode.dev/optimizing-performance-through-sleep-and-brain-health",
+      readTime: "5 min read",
+    },
+    {
+      id: 4,
+      title: "Developer Health OS and Burnout Recovery Strategies",
+      excerpt:
+        "we explore developer health, focusing on burnout recovery, prevention, and performance optimization. Michelle Bakels discussed the 'Developer Health OS,' a comprehensive system aimed at helping software developers maintain a balanced, healthy work-life experience, similar to how professional athletes optimize their physical performance. ",
+      date: "2024-10-17",
+      slug: "https://alhassanjoshua.hashnode.dev/developer-health-os-and-burnout-recovery-strategies",
+      readTime: "5 min read",
     },
     // Additional posts...
   ];
@@ -49,9 +86,10 @@
           </time>
           <h3 class="blog-title">
             <a
-              href={`/blog/${post.slug}`}
+              href={post.slug}
               class="blog-title-link"
               aria-label={`Read ${post.title}`}
+              target="_blank"
             >
               {post.title}
             </a>

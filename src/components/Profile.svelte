@@ -1,5 +1,6 @@
 <script>
   import "boxicons";
+  import resume from "../assets/Joshua-Abel-Alhassan.pdf";
 </script>
 
 <section>
@@ -37,10 +38,17 @@
         aria-label="Twitter Profile"
         ><box-icon name="twitter" type="logo" color="#ffffff"></box-icon></a
       >
-      <a href="https://github.com" class="profile-link" aria-label="Email"
+      <a
+        href="mailto:thealhassanjoshua@gmail.com"
+        class="profile-link"
+        aria-label="Email"
         ><box-icon name="envelope" color="#ffffff"></box-icon></a
       >
-      <a href="/resume.pdf" class="profile-link" aria-label="Download Resume"
+      <a
+        href={resume}
+        download
+        class="profile-link"
+        aria-label="Download Resume"
         ><box-icon name="file" type="solid" color="#ffffff"></box-icon></a
       >
     </div>

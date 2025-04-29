@@ -15,11 +15,17 @@
       <p>Technologies: <span class="span-style svelte"> Svelte </span></p>
 
       <div class="project-links">
-        <a href="#">Preview</a>
+        <a
+          href="https://portfolio-website-lemon-gamma-45.vercel.app/"
+          target="_blank"
+          class="preview"
+          ><box-icon name="desktop" type="logo" color="#333"></box-icon> Preview</a
+        >
         <a
           href="https://github.com/Josh-Alhassan/portfolio-website"
           target="_blank"
-          ><box-icon name="github" type="logo" color="#ffffff"></box-icon> Code</a
+          class="code"
+          ><box-icon name="github" type="logo" color="#333"></box-icon> Code</a
         >
       </div>
       <figure class="project-image-container">
@@ -35,25 +41,28 @@
     <div class="project-card">
       <h3>Edustipend</h3>
       <p>
-        A Job application platform that connects Job seekers with job
-        opportunities. It offers a user-friendly interface for job seekers to
-        find and apply for jobs.
+        A platform that provides support and financial resources to aid
+        learning. It offers laptops, data subscriptions, and other resources.
       </p>
       <p>
         Technologies: <span class="span-style react"> React.js</span>
       </p>
 
       <div class="project-links">
-        <a href="https://www.edustipend.org">Project</a>
-        <a href="https://github.com/edustipend/dotorg" target="_blank"
-          ><box-icon name="github" type="logo" color="#ffffff"
-          ></box-icon>Code</a
+        <a href="https://www.edustipend.org" class="preview"
+          ><box-icon name="desktop" type="logo" color="#333"></box-icon> Preview</a
+        >
+        <a
+          href="https://github.com/edustipend/dotorg"
+          target="_blank"
+          class="code"
+          ><box-icon name="github" type="logo" color="#333"></box-icon>Code</a
         >
       </div>
       <figure class="project-image-container">
         <img src={project2} alt="Edustipend Platform" class="project-image" />
         <figcaption>
-          A screenshot of my Edustipend website, built with React.js
+          A screenshot of Edustipend website, built with React.js
           <br />
         </figcaption>
       </figure>
@@ -63,8 +72,9 @@
     <div class="project-card">
       <h3>TBO Web</h3>
       <p>
-        A platform that provides support and financial resources to aid
-        learning. It offers laptops, data subscriptions, and other resources.
+        A Job application platform that connects Job seekers with job
+        opportunities. It offers a user-friendly interface for job seekers to
+        find and apply for jobs.
       </p>
       <p>
         Technologies: <span class="span-style react"> React.js</span>
@@ -72,9 +82,14 @@
         <span class="span-style material-ui"> Material UI</span>
       </p>
       <div class="project-links">
-        <a href="https://web-tbo.vercel.app/" target="_blank">Preview</a>
-        <a href="https://github.com/00Photon/web.tbo" target="_blank"
-          ><box-icon name="github" type="logo" color="#ffffff"></box-icon> Code</a
+        <a href="https://web-tbo.vercel.app/" target="_blank" class="preview"
+          ><box-icon name="desktop" type="logo" color="#333"></box-icon> Preview</a
+        >
+        <a
+          href="https://github.com/00Photon/web.tbo"
+          target="_blank"
+          class="code"
+          ><box-icon name="github" type="logo" color="#333"></box-icon> Code</a
         >
       </div>
       <figure class="project-image-container">
@@ -84,8 +99,7 @@
           class="project-image"
         />
         <figcaption>
-          A screenshot of my TBO website, built with React, Next and Material
-          UI.
+          A screenshot of TBO website, built with React, Next and Material UI.
           <br />
         </figcaption>
       </figure>
@@ -99,12 +113,19 @@
       </p>
       <p>
         Technologies: <span class="span-style react"> React.js</span>
-        <span class="span-style next"> Next.js</span>
       </p>
       <div class="project-links">
-        <a href="https://www.ftf-ministry.vercel.app">Preview</a>
-        <a href="https://github.com/Josh-Alhassan/ftf-ministry" target="_blank"
-          ><box-icon name="github" type="logo" color="#ffffff"></box-icon> Code</a
+        <a
+          href="https://www.ftf-ministry.vercel.app"
+          target="_blank"
+          class="preview"
+          ><box-icon name="desktop" type="logo" color="#333"></box-icon> Preview</a
+        >
+        <a
+          href="https://github.com/Josh-Alhassan/ftf-ministry"
+          target="_blank"
+          class="code"
+          ><box-icon name="github" type="logo" color="#333"></box-icon> Code</a
         >
       </div>
       <figure class="project-image-container">
@@ -129,12 +150,22 @@
       <p>
         Technologies: <span class="span-style react"> React.js</span>
         <span class="span-style next"> Next.js</span>
+        <span class="span-style typescript"> Typescript</span>
       </p>
 
       <div class="project-links">
-        <a href="https://use-everey-research-zbii.vercel.app/">Preview</a>
-        <a href="https://github.com/Josh-Alhassan/everey-app" target="_blank">
-          <box-icon name="github" type="logo" color="#ffffff"></box-icon> Code</a
+        <a
+          href="https://use-everey-research-zbii.vercel.app/"
+          target="_blank"
+          class="preview"
+          ><box-icon name="desktop" type="logo" color="#333"></box-icon> Preview</a
+        >
+        <a
+          href="https://github.com/Josh-Alhassan/everey-app"
+          target="_blank"
+          class="code"
+        >
+          <box-icon name="github" type="logo" color="#333333"></box-icon> Code</a
         >
       </div>
       <figure class="project-image-container">
@@ -247,6 +278,15 @@
 
   .next {
     background-color: var(--next-color);
+  }
+
+  .typescript {
+    background-color: var(--typescript-color);
+  }
+
+  .code,
+  .preview {
+    color: #000000 !important;
   }
 
   @media (min-width: 768px) {
