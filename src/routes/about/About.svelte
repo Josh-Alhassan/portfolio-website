@@ -8,7 +8,7 @@
     },
     {
       type: "LinkedIn",
-      value: "Joshua Alhassan",
+      value: "linkedin.com/in/alhassan-joshua-abel/",
     },
     {
       type: "Twitter",

@@ -1,5 +1,21 @@
 <script>
+  // @ts-nocheck
+
   import "boxicons";
+
+  /**
+   * @file Blog section component displaying a list of articles with metadata and links.
+   * @module src/routes/Blog.svelte
+   * @author Joshua Alhassan
+   * @description A reusable blog listing component that renders article cards with titles, excerpts, dates, and read times.
+   */
+
+  /**
+   * Array of blog post objects containing article metadata and content.
+   * @type {Array<blogPost>}
+   * @const
+   * @default
+   */
 
   // Blog post data - could be fetched from CMS/API
   const blogPosts = [
@@ -58,10 +74,16 @@
       slug: "https://alhassanjoshua.hashnode.dev/developer-health-os-and-burnout-recovery-strategies",
       readTime: "5 min read",
     },
-    // Additional posts...
   ];
 
-  // Format date for display
+  /**
+   * Formats a date string into a human-readable format.
+   * @function formatDate
+   * @param {string} dateString - ISO format date string (YYYY-MM-DD)
+   * @returns {string} Formatted date (e.g. "December 11, 2024")
+   * @example
+   * formatDate("2024-12-11") // Returns "December 11, 2024"
+   */
   const formatDate = (dateString) => {
     // @ts-ignore
     const options = {
@@ -72,6 +94,26 @@
     // @ts-ignore
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
+
+  /**
+   * Blog section component that displays a list of articles.
+   * @component
+   * @prop {string} [aria-label="Blog"] - Accessibility label for the section
+   * @returns {HTMLElement} Rendered blog section with article cards
+   * @example
+   * <Blog />
+   */
+
+  /**
+   * Blog post object structure.
+   * @typedef {Object} BlogPost
+   * @property {number} id - Unique identifier for the post
+   * @property {string} title - Article title
+   * @property {string} excerpt - Short preview text
+   * @property {string} date - Publication date (YYYY-MM-DD)
+   * @property {string} slug - URL path to full article
+   * @property {string} readTime - Estimated reading duration
+   */
 </script>
 
 <section>
@@ -102,7 +144,12 @@
   </div>
 
   <div class="blog-cta">
-    <a href="/blog" class="see-more" aria-label="View all blog posts">
+    <a
+      href="https://alhassanjoshua.hashnode.dev/"
+      class="see-more"
+      aria-label="View all blog posts"
+      target="_blank"
+    >
       See more
       <box-icon
         name="right-arrow-alt"
