@@ -1,4 +1,35 @@
 <script>
+  /**
+   * @file Work Experience Section Component
+   * @module src/components/WorkExperience.svelte
+   * @description Displays a chronological list of professional work experiences with achievements.
+   */
+
+  /**
+   * Professional work experience object structure.
+   * @typedef {Object} WorkExperience
+   * @property {string} role - Job title/position
+   * @property {string} company - Company name
+   * @property {string} url - Company website URL
+   * @property {string} location - Geographic location (Format: "Country/City")
+   * @property {string} duration - Employment duration (Format: "Remote | Start Date - End Date")
+   * @property {Array<Achievement>} achievements - List of professional accomplishments
+   */
+
+  /**
+   * Professional achievement object structure.
+   * @typedef {Object} Achievement
+   * @property {string} title - Achievement headline
+   * @property {string} description - Detailed explanation of achievement
+   */
+
+  /**
+   * Array of professional work experiences.
+   * @type {Array<WorkExperience>}
+   * @const
+   * @default
+   */
+
   const experiences = [
     {
       role: "Frontend Engineer",

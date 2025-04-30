@@ -1,6 +1,26 @@
 <script>
   import bioImage from "../../assets/joshua.jpg";
 
+  /**
+   * @file About Me Section Component
+   * @module src/components/About.svelte
+   * @description Personal introduction section featuring bio, image, and contact information.
+   */
+
+  /**
+   * Contact information object structure.
+   * @typedef {Object} ContactLink
+   * @property {string} type - Type of contact (e.g., "Email", "LinkedIn")
+   * @property {string} value - Contact value (email, username, URL)
+   */
+
+  /**
+   * Array of contact methods and information.
+   * @type {Array<ContactLink>}
+   * @const
+   * @default
+   */
+
   const contactLinks = [
     {
       type: "Email",
@@ -15,6 +35,16 @@
       value: "@josh_script",
     },
   ];
+
+  /**
+   * About Me Section Component
+   * @component
+   * @description Displays personal introduction, profile image, and contact information.
+   * @prop {string} bioImage - Path to profile image asset
+   * @returns {HTMLElement} Semantic section containing personal introduction
+   * @example
+   * <About bioImage="../../assets/joshua.jpg" />
+   */
 </script>
 
 <section class="about-section">
@@ -32,7 +62,12 @@
   </header>
 
   <figure>
-    <img class="bio-image" src={bioImage} alt="Joshua Alhassan" />
+    <img
+      class="bio-image"
+      src={bioImage}
+      alt="Portrait of Joshua Alhassan"
+      loading="lazy"
+    />
 
     <figcaption class="figure-caption">Joshua Abel Alhassan</figcaption>
   </figure>
@@ -47,9 +82,12 @@
 
   <div class="connect-with-me__card">
     {#each contactLinks as link}
-      <p class="connect-link">
+      <a
+        href={link.type === "Email" ? `mailto:${link.value}` : link.value}
+        class="connect-link"
+      >
         {link.type}: <span class="connect-link-span">{link.value}</span>
-      </p>
+      </a>
     {/each}
   </div>
 
@@ -115,6 +153,12 @@
   .connect-link {
     color: var(--text-color);
     font-size: 1.1rem;
+
+    transition: transform 0.2s ease;
+  }
+
+  .connect-link:hover {
+    transform: translateX(5px);
   }
 
   .connect-link-span {

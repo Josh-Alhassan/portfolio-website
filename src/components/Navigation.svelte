@@ -4,6 +4,40 @@
   import { navigate, subscribe } from "../lib/router";
   import { onDestroy } from "svelte";
 
+  /**
+   * A navigation component that handles both desktop and mobile views with dark mode toggle functionality.
+   * @module Navigation
+   * @component
+   * @example
+   * <Navigation />
+   *
+   * @property {string} currentPath - The current active path derived from the router.
+   * @property {boolean} menuOpen - Controls the visibility of the mobile menu.
+   * @property {boolean} darkMode - Controls the dark mode state, persisted in localStorage.
+   *
+   * @typedef {Object} NavItem
+   * @property {string} name - The display name of the navigation item.
+   * @property {string} path - The route path for the navigation item.
+   *
+   * @property {NavItem[]} navItems - Array of navigation items to display.
+   *
+   * @function toggleMenu
+   * @description Toggles the mobile menu open/close state.
+   *
+   * @function toggleDarkMode
+   * @description Toggles between dark and light mode, updating both the DOM and localStorage.
+   *
+   * @function handleNavigation
+   * @param {string} path - The path to navigate to.
+   * @description Handles navigation to a new route and closes the mobile menu.
+   *
+   * @listens route:change
+   * @description Subscribes to route changes to update the active path.
+   *
+   * @listens destroy
+   * @description Cleans up the route subscription when component is destroyed.
+   */
+
   let currentPath = window.location.pathname;
   let menuOpen = false;
   let darkMode = false;
