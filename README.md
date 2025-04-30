@@ -1,11 +1,15 @@
 # **Joshua Alhassan - Portfolio Website**
 
-🚀 **A modern, responsive portfolio built with SvelteKit, designed for performance and accessibility.**
+[![Vercel Deployment](https://img.shields.io/badge/deployed%20on-vercel-black?logo=vercel)](https://your-portfolio.vercel.app)
+[![Svelte](https://img.shields.io/badge/framework-sveltekit-FF3E00?logo=svelte)](https://kit.svelte.dev)
+[![JSDoc](https://img.shields.io/badge/docs-jsdoc-yellow)](https://jsdoc.app)
+
+**A modern, responsive portfolio built with SvelteKit, designed for performance and accessibility.**
 
 ![Portfolio Screenshot](./src/assets/project-1.png)
 ![Mobile Screenshot](./src/assets/Screenshot-1.png)
 
-## **✨ Features**
+## **Features**
 
 ✅ **Responsive Design** – Mobile-first approach with seamless desktop adaptation  
 ✅ **Dark/Light Mode** – Toggleable theme with system preference detection  
@@ -19,8 +23,28 @@
 - **Styling**: CSS with custom properties (variables)
 - **Icons**: [Boxicons](https://boxicons.com/)
 - **Deployment**: [Vercel](https://vercel.com/)
+- **JSDoc**: [JSDoc](https://jsdoc.app/)
 
-## **🚀 Getting Started**
+## Component Documentation
+
+All components are documented using JSDoc standards:
+
+**javascript**
+
+```js
+/**
+ * @file Router Component
+ * @description Handles client-side routing and view rendering
+ * @prop {RouterInterface} router - Injection of router methods
+ */
+```
+
+**View complete documentation:**
+
+`bash`
+`npm run docs`
+
+## **Getting Started**
 
 ### **Prerequisites**
 
@@ -49,27 +73,27 @@
 npm run build
 ```
 
-## **📂 Project Structure**
+## **Project Structure**
 
 ```
 src/
 ├── routes/            # Page-based routing
-│   ├── +page.svelte   # Homepage
 │   ├── about/         # About page
 │   └── blog/          # Blog section
 ├── components/        # Reusable components
 │   ├── Navigation.svelte
 │   ├── Footer.svelte
+|   ├── Profile.svelte
+|   ├── Project.svelte
+|   ├── Router.svelte
+|   ├── WorkExperienc.svelte
 │   └── ...
+├── lib/            # Page-based routing
+│   ├── router.js      # Router component
 ├── app.css            # Global styles
+├── app.svelte         # Root page
 └── ...
 ```
-
-## **🔧 Customization**
-
-- **Themes**: Modify colors in `app.css` (`--text-color`, `--menu-color`, etc.)
-- **Content**: Update `src/routes` and components with your personal info
-- **Meta Tags**: Edit `src/app.html` for SEO optimization
 
 ## **🚀 Deployment**
 
@@ -80,21 +104,26 @@ src/
    - Output directory: `.svelte-kit/vercel`
 
 2. **Netlify**:
+
    ```sh
    npm install -g netlify-cli
    netlify deploy
    ```
 
-## **📜 License**
+3. **Surge**:
+   ```sh
+   npm install --global surge
+   # In the project director, just run ....
+   surge
+   ```
+
+## **License**
 
 MIT © [Joshua Alhassan](https://github.com/Josh-Alhassan)
 
 ---
 
-💡 **Tip**: Want to add a blog? Integrate a headless CMS like [Sanity](https://www.sanity.io/) or [Strapi](https://strapi.io/)!
-
-🔗 **Live Demo**: [portfolio-joshua.vercel.app](https://portfolio-joshua.vercel.app)
+🔗 **Live Demo Vercel**: [portfolio-website-lemon-gamma-45.vercel.app/](https://portfolio-website-lemon-gamma-45.vercel.app/)
+🔗 **Live Demo Using Surge**: [alhassanjoshua.surge.sh/](http://alhassanjoshua.surge.sh/)
 
 ---
-
-This `README.md` provides a **clear, structured overview** while highlighting key features, setup instructions, and customization options. Let me know if you'd like any refinements! 🚀
