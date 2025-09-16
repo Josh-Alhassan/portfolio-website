@@ -5,7 +5,7 @@
   import project4 from "../assets/project-4.png";
   import project5 from "../assets/project-5.png";
   import project6 from "../assets/complet101.png";
-  import project7 from "../assets/everybitcoindashboard.png";
+  import project7 from "../assets/everybitcoin.png";
 </script>
 
 <section>
