@@ -4,6 +4,8 @@
   import project3 from "../assets/project-3.png";
   import project4 from "../assets/project-4.png";
   import project5 from "../assets/project-5.png";
+  import project6 from "../assets/complet101.png";
+  import project7 from "../assets/everybitcoindashboard.png";
 </script>
 
 <section>
@@ -180,6 +182,73 @@
         </figcaption>
       </figure>
     </div>
+
+    <!-- Complet101 -->
+    <div class="project-card">
+      <h3>CompLet101</h3>
+      <p>
+        CompLet101™ streamlines complex processes, providing accessible
+        solutions with a focus on your privacy and security.
+      </p>
+      <p>
+        Technologies: <span class="span-style react"> React.js</span>
+        <!-- <span class="span-style next"> Next.js</span>
+        <span class="span-style typescript"> Typescript</span> -->
+      </p>
+
+      <div class="project-links">
+        <a href="https://complet101.surge.sh/" target="_blank" class="preview"
+          ><box-icon name="desktop" type="logo" color="#333"></box-icon> Preview</a
+        >
+        <a
+          href="https://github.com/synoloop-solutions/complet101-frontend"
+          target="_blank"
+          class="code"
+        >
+          <box-icon name="github" type="logo" color="#333333"></box-icon> Code</a
+        >
+      </div>
+      <figure class="project-image-container">
+        <img src={project6} alt="Complet101 Platform" class="project-image" />
+        <figcaption>
+          A screenshot of CompLet101 platform, built with React and modular CSS.
+          <br />
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- EveryBitCoin -->
+    <div class="project-card">
+      <h3>Every BitCoin</h3>
+      <p>A Bitcoin investment Progressive Web App.</p>
+      <p>
+        <!-- Technologies: <span class="span-style react"> React.js</span> -->
+        Technologies: <span class="span-style svelte"> Svelte </span>
+        <!-- <span class="span-style next"> Next.js</span>
+        <span class="span-style typescript"> Typescript</span> -->
+      </p>
+
+      <div class="project-links">
+        <a href="https://everybitcoin.app/" target="_blank" class="preview"
+          ><box-icon name="desktop" type="logo" color="#333"></box-icon> Preview</a
+        >
+        <a
+          href="https://github.com/monierate/everybitcoin-mobile-web/tree/develop"
+          target="_blank"
+          class="code"
+        >
+          <box-icon name="github" type="logo" color="#333333"></box-icon> Code</a
+        >
+      </div>
+      <figure class="project-image-container">
+        <img src={project7} alt="Complet101 Platform" class="project-image" />
+        <figcaption>
+          A screenshot of every bitcoin dashboard app, built with Svelte, and
+          TailwindCSS.
+          <br />
+        </figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -191,9 +260,10 @@
   }
 
   .projects-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* justify-content: center;
+    flex-wrap: wrap; */
     gap: 2rem;
 
     /* margin-bottom: 100px; */
@@ -204,7 +274,7 @@
     border-radius: 0.4rem;
     color: var(--text-color);
     width: 100%;
-    max-width: 400px;
+    max-width: 700px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   .project-card h3 {
@@ -295,7 +365,7 @@
     }
 
     .project-card {
-      max-width: 450px;
+      /* max-width: 450px; */
       height: auto;
       padding: 1.5rem;
     }

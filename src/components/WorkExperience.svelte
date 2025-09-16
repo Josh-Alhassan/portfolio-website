@@ -31,6 +31,7 @@
    */
 
   const experiences = [
+    // Edustipend
     {
       role: "Frontend Engineer",
       company: "Edustipend",
@@ -80,6 +81,7 @@
       ],
     },
 
+    // Web TBO
     {
       role: "Frontend Engineer",
       company: "Web TBO",
@@ -96,6 +98,68 @@
           title: "Accelerated development",
           description:
             "by creating reusable Material-UI components, reducing redundant code by 50%.",
+        },
+      ],
+    },
+
+    // Monierate
+    {
+      role: "Frontend Engineer",
+      company: "Monierate",
+      url: "https://www.monierate.com",
+      location: "Nigeria/Abuja",
+      duration: "Remote |, June 2025 - August 2025",
+      achievements: [
+        {
+          title: "Enhanced the user experience of a cryptocurrency platform",
+          description:
+            " by building a reusable deposit module with QR code integration, one-click address copy, and expandable details, reducing code duplication and accelerating development of new asset onboarding by 30%.",
+        },
+        {
+          title: "Designed and implemented a modular transaction dashboard",
+          description:
+            " using Svelte and TailwindCSS, breaking complex UIs into reusable components that reduced code duplication and improved maintainability.",
+        },
+        {
+          title: "Integrated dynamic API-driven data binding,",
+          description:
+            "enabling real-time rendering of crypto purchase details, payment requests, and wallet information with copy-to-clipboard functionality.",
+        },
+        {
+          title: "Applied component-driven architecture and TypeScript",
+          description:
+            " type safety, ensuring scalability and seamless extension for future features (e.g., mobile app notifications, multi-network support).",
+        },
+        {
+          title: "Improved developer velocity",
+          description:
+            " by creating reusable, parameterized UI components that reduced implementation time for new transaction types by ~40%.",
+        },
+      ],
+    },
+
+    // Peddle Soft
+    {
+      role: "Frontend Engineer",
+      company: "PeddleSoft",
+      url: "https://peddlesoft.com/",
+      location: "Nigeria/Lagos",
+      duration: "Remote |, July 2025 - Present",
+      achievements: [
+        {
+          title: "Increased user engagement by 20%",
+          description:
+            "by developing a responsive, accessible UI for a Membership & e-voting platform using Next and Tailwind CSS.",
+        },
+        {
+          title: "Reduced page load times by 30%",
+          description:
+            "through code splitting and lazy loading, enhancing user experience.",
+        },
+        {
+          title: "Boosted team efficiency by 25%",
+          description:
+            "by creating a reusable component library with Storybook, standardizing UI elements.",
         },
       ],
     },
